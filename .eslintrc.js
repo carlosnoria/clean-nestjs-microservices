@@ -21,5 +21,28 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
+    "@typescript-eslint/indent": ["error", 2],
+    'prettier/prettier': [
+      'error',
+      {
+        singleQuote: false,
+        semi: true,
+      }
+    ],
+    "quotes": ["error", "double"]
   },
+  overrides: [
+    {
+      "files": ["*"],
+      "rules": {
+        "@typescript-eslint/indent": "off" // Fix conflicts with prettier
+      }
+    },
+    {
+      "files": ["*"],
+      "rules": {
+        "linebreak-style": ["error", "unix"]
+      }
+    }
+  ]
 };
